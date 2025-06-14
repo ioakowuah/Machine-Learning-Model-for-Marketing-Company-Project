@@ -1,7 +1,7 @@
 import pickle 
 import streamlit as st
 
-model = pickle.load(open('https://github.com/ioakowuah/Machine-Learning-Model-for-Marketing-Company-Project/blob/main/RandomForestClassifier_model.pkl','rb'))
+model = pickle.load(open('C:/Users/HP/Desktop/ML Project/RandomForestClassifier_model.pkl','rb'))
 
 def main():
     st.title('Client will subscribe to a term deposit')
