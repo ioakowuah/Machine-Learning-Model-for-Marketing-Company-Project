@@ -1,7 +1,8 @@
 import pickle 
 import streamlit as st
 
-model = pickle.load(open('C:/Users/HP/Desktop/ML Project/RandomForestClassifier_model.pkl','rb'))
+with open("RandomForestClassifier_model.pkl", "rb") as f:
+    model = joblib.load(f)
 
 def main():
     st.title('Client will subscribe to a term deposit')
