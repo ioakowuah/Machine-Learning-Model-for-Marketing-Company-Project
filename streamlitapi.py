@@ -1,9 +1,14 @@
 import joblib
 import streamlit as st
+import requests
+from io import BytesIO
 
 # Load trained model
-with open("RandomForestClassifier_model.pkl", "rb") as f:
-    model = joblib.load(f)
+#with open("RandomForestClassifier_model.pkl", "rb") as f:
+    #model = joblib.load(f)
+url = 'https://drive.google.com/drive/folders/15crWSVA2sH3KV1ZB2AcKl0vrOpqGDco-/RandomForestClassifier_model.pkl'
+response = requests.get(url)
+model = joblib.load(BytesIO(response.content))
     
 def main():
     st.title('💼 Will the client subscribe to a term deposit?')
