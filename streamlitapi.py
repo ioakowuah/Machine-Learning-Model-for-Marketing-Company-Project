@@ -6,10 +6,16 @@ from io import BytesIO
 # Load trained model
 #with open("RandomForestClassifier_model.pkl", "rb") as f:
     #model = joblib.load(f)
-file_id = '1DhYxJPjKqgP54REvEAxRUo2yLb62MnEv'
-url = f'https://drive.google.com/uc?id={file_id}'
-response = requests.get(url)
-model = joblib.load(BytesIO(response.content))
+def load_model():
+    url = 'https://huggingface.co/ioakowuah/Classificationmodel/blob/main/RandomForestClassifier_model.pkl'
+    response = requests.get(url)
+    model = joblib.loads(response.content)
+    return model
+
+model = load_model()
+
+st.write('model loaded successfully')
+    
     
 def main():
     st.title('💼 Will the client subscribe to a term deposit?')
