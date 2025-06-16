@@ -6,7 +6,8 @@ from io import BytesIO
 # Load trained model
 #with open("RandomForestClassifier_model.pkl", "rb") as f:
     #model = joblib.load(f)
-url = 'https://drive.google.com/drive/folders/15crWSVA2sH3KV1ZB2AcKl0vrOpqGDco-/RandomForestClassifier_model.pkl'
+file_id = '1DhYxJPjKqgP54REvEAxRUo2yLb62MnEv'
+url = f'https://drive.google.com/uc?id={file_id}'
 response = requests.get(url)
 model = joblib.load(BytesIO(response.content))
     
