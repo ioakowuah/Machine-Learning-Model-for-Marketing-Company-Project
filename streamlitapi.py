@@ -1,5 +1,6 @@
 import joblib
 import streamlit as st
+import pickle
 import requests
 from io import BytesIO
 
@@ -9,7 +10,7 @@ from io import BytesIO
 def load_model():
     url = 'https://huggingface.co/ioakowuah/Classificationmodel/resolve/main/RandomForestClassifier_model.pkl'
     response = requests.get(url)
-    model = joblib.loads(response.content)
+    model = pickle.loads(response.content)
     return model
 
 model = load_model()
