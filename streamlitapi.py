@@ -10,7 +10,7 @@ from io import BytesIO
 def load_model():
     url = 'https://huggingface.co/ioakowuah/Classificationmodel/resolve/main/RandomForestClassifier_model.pkl'
     response = requests.get(url)
-    model = pickle.loads(response.content)
+    model = joblib.load(BytesIO(response.content))
     return model
 
 model = load_model()
