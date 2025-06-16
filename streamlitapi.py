@@ -7,7 +7,7 @@ from io import BytesIO
 #with open("RandomForestClassifier_model.pkl", "rb") as f:
     #model = joblib.load(f)
 def load_model():
-    url = 'https://huggingface.co/ioakowuah/Classificationmodel/blob/main/RandomForestClassifier_model.pkl'
+    url = 'https://huggingface.co/ioakowuah/Classificationmodel/resolve/main/RandomForestClassifier_model.pkl'
     response = requests.get(url)
     model = joblib.loads(response.content)
     return model
