@@ -15,7 +15,6 @@ def load_model():
 
 model = load_model()
 
-st.write('model loaded successfully')
     
     
 def main():
